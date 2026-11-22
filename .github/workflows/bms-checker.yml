@@ -28,7 +28,7 @@ jobs:
 
       - name: Run checker
         env:
-          SEND_TEST_EMAIL: "true"
+          SEND_TEST_EMAIL: "false"
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_TO_EMAIL: ${{ secrets.RESEND_TO_EMAIL }}
           RESEND_FROM_EMAIL: ${{ vars.RESEND_FROM_EMAIL }}
