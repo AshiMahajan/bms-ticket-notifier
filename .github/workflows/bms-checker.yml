@@ -24,7 +24,12 @@ jobs:
           python-version: '3.14'
 
       - name: Install dependencies
-        run: uv sync --frozen
+        run: |
+          uv sync --frozen
+          uv pip install --python .venv/bin/python playwright
+
+      - name: Install Chromium
+        run: uv run playwright install --with-deps chromium
 
       - name: Run checker
         env:
